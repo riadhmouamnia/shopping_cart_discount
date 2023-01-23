@@ -21,9 +21,9 @@ export default function updatCart(state) {
       element.discount = null;
     }
     //check if Milk is availble in cart and quantint is 3
-    if (element.id === 2 && element.quantity >= 3) {
-      if (element.quantity % 3 === 0) acc = element.quantity / 3;
-      else acc = Math.floor((element.quantity - 1) / 3);
+    if (element.id === 2 && element.quantity >= 4) {
+      if (element.quantity % 4 === 0) acc = element.quantity / 4;
+      else acc = Math.floor((element.quantity - 1) / 4);
       // check if user add 1 more over the 3 milks to discount the new added one
       if (element.id === 2 && element.quantity >= 4) {
         discounts.push(-(acc * 1.15));
