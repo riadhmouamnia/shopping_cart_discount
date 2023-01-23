@@ -17,12 +17,14 @@ export default function updatCart(state) {
       element.discount = null;
     }
     if (element.id === 2 && element.quantity >= 3) {
-      if (element.quantity % 3 === 0) {
-        acc = element.quantity / 3;
+      if (element.quantity % 3 === 0) acc = element.quantity / 3;
+      else {
+        acc = Math.floor((element.quantity - 1) / 3);
+      }
+      if (element.id === 2 && element.quantity >= 4) {
         discounts.push(-(acc * 1.15));
         element.discount = 0;
       } else {
-        acc = (element.quantity - 1) / 3;
         element.discount = null;
       }
     }
